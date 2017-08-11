@@ -9,10 +9,11 @@ import data_helpers
 from text_cnn import TextCNN
 from tensorflow.contrib import learn
 
+
 # Data Generation
-# import json
-# data = json.load(open('/home/matthew/Downloads/ALL.json','r'))
-#
+#import json
+#data = json.load(open('/home/matthew/Downloads/ALL.json','r'))
+
 # positive_data_file = open('./data/JK_POS.txt','w')
 # negative_data_file = open('./data/JK_NEG.txt','w')
 #
@@ -40,7 +41,7 @@ tf.flags.DEFINE_string("positive_data_file", "./data/JK_POS.txt", "Data source f
 tf.flags.DEFINE_string("negative_data_file", "./data/JK_NEG.txt", "Data source for the negative data.")
 
 # Model Hyperparameters
-tf.flags.DEFINE_integer("embedding_dim", 300, "Dimensionality of character embedding (default: 128)")
+tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
 tf.flags.DEFINE_integer("num_filters", 128, "Number of filters per filter size (default: 128)")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
@@ -48,7 +49,7 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.0, "L2 regularization lambda (default: 
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 1000, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 200, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 10, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 10, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
